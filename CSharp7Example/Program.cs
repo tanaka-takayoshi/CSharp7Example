@@ -1,5 +1,7 @@
 ﻿using CSharp7Example;
 using System;
+using System.IO;
+using System.Text;
 
 namespace CSharp7Example
 {

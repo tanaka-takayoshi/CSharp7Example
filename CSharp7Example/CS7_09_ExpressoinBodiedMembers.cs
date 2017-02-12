@@ -13,25 +13,29 @@ namespace CSharp7Example
         }
     }
 
-    class Person
+    class Example
     {
-        private static ConcurrentDictionary<int, string> names = new ConcurrentDictionary<int, string>();
-        
-        private int id = GetId();
+        private static int counter = 0;
+        private string name;
+        private IDictionary<string, string> dictionary = new Dictionary<string, string>();
 
-        private static int GetId()
-        {
-            return 1;
-        }
-
-        public Person(string name) => names.TryAdd(id, name); // constructors
-        ~Person() => names.TryRemove(id, out _);              // destructors
+        public Example() => ++counter; // コンストラクタ
+        ~Example() => --counter;            // デストラクタ
         public string Name
         {
-            get => names[id];                                 // getters
-            set => names[id] = value;                         // setters
+            get => name;                                 // getter
+            set => name = value;                         // setter
         }
-
+        public string this[string key]
+        {
+            get => dictionary[key]; //インデクサのgetter
+            set => dictionary[key] = value; //インデクサsetter
+        }
+        public event Action E
+        {
+            add => ++counter;
+            remove => --counter;
+        }
     }
 
 }

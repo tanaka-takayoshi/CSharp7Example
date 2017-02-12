@@ -10,5 +10,11 @@
             Height = h;
             Length = l;
         }
+
+
+        void Main()
+        {
+
+        }
     }
 }
