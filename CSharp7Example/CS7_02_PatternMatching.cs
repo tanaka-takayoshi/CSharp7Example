@@ -73,11 +73,11 @@ namespace CSharp7Example
             {
                 //C# 6.0以前のcase節
                 case 0:
-                    WriteLine("shoult not be '0'");
+                    WriteLine("should not be '0'");
                     break;
                 //C# 6.0以前のcaseにガード節追加
                 case 1 when IsDebug(shape):
-                    WriteLine("shoult not be '1' if debug is enabled");
+                    WriteLine("should not be '1' if debug is enabled");
                     break;
                 //type pattern
                 //case Circle: のようにプリミティブでない型をC# 6.0以前のように記述するとコンパイルエラー。変数宣言として記述しないといけない。
@@ -86,7 +86,7 @@ namespace CSharp7Example
                     break;
                 //キャストした変数が不要な場合は_が利用できる
                 case int _:
-                    WriteLine("shoult not be integer");
+                    WriteLine("should not be integer");
                     break;
                 //type patternにガード節
                 case Rectangle s when (s.Length == s.Height):
