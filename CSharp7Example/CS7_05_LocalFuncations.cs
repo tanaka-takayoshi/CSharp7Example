@@ -11,7 +11,7 @@ namespace CSharp7Example
     {
         public void Run()
         {
-            Fibonacci(10);
+            RecursiveProc(10);
             //無限に再帰する関数を呼び出すと実行時エラー
             //RecursiveLocalFunction();
 
@@ -33,20 +33,20 @@ namespace CSharp7Example
             WriteLine(GetFactorialUsingLocal(9000));
         }
 
-        void Fibonacci(int i)
+        void RecursiveProc(int i)
         {
             //匿名関数で再帰する場合は最初に宣言しないといけない
             Func<int, int> f2 = null;
-            f2 = n => n >= 1 ? n * f2(n - 1) : 1;
+            f2 = n => (n >= 1) ? (n * f2(n - 1)) : 1;
             var res = f2(i);
-            WriteLine(i);
+            WriteLine(re);
 
             //ローカル関数は通常の関数同様再帰を記述できる
             int f(int x) => x >= 1 ? x * f(x - 1) : 1;
             //ローカル関数を暗黙的に型宣言するとコンパイルエラー
             //var f3(int x) => x >= 1 ? x * f(x - 1) : 1;
             res = f(i);
-            WriteLine(i);
+            WriteLine(res);
         }
 
         //ローカル関数内でお互いの関数を呼び出すコードは記述できる
