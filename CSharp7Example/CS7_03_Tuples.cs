@@ -92,9 +92,11 @@ namespace CSharp7Example
             (int moo, int boo) t2 = vt;  //要素名が異なっても同一の型となる     
 
             t2.moo = 1;
+            
+            var n = noo();
         }
 
-        (int sum, int count) moo()
+        (int sum, int count) noo()
         {
             return (count: 1, sum: 3); //コンパイル警告は表示されるが異なる要素名でリテラルを宣言できる
         }
