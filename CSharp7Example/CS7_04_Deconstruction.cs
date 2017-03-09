@@ -42,9 +42,9 @@ namespace CSharp7Example
         {
             string name; byte b;
             (name, b) = ("a", 1); //左辺のbがbyteであり、右辺の1はbyteとして宣言できるためOK
-            //(name, b) = ("a", 1234); 1234はbyteにキャストできないのでコンパイルエラー
+            //(name, b) = ("a", 1234); //1234はbyteにキャストできないのでコンパイルエラー
             var t = ("a", 1);
-            //(name, b) = t; 暗黙的に型付けするとt は(string, int)であるため、intをbyteにキャストできないためコンパイルエラー
+            //(name, b) = t; //暗黙的に型付けするとt は(string, int)であるため、intをbyteにキャストできないためコンパイルエラー
 
             int x; double y;
             (x, y) = new Point(2, 4); //doubleはintから暗黙的に変換できるのでOK

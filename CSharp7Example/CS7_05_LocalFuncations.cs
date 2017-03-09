@@ -39,7 +39,7 @@ namespace CSharp7Example
             Func<int, int> f2 = null;
             f2 = n => (n >= 1) ? (n * f2(n - 1)) : 1;
             var res = f2(i);
-            WriteLine(re);
+            WriteLine(res);
 
             //ローカル関数は通常の関数同様再帰を記述できる
             int f(int x) => x >= 1 ? x * f(x - 1) : 1;
@@ -97,7 +97,7 @@ namespace CSharp7Example
         {
             int x;
             //初期化されていないローカル変数をキャプチャすることができる
-            void AddTo(int y) => x = x + y;
+            int AddTo(int y) => x = x + y;
             //xが初期化される前にローカル関数を呼び出すとコンパイルエラー
             //var res0 = AddTo(3);
             x = 5;
